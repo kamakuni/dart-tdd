@@ -12,5 +12,6 @@ void main() {
   });
   test('Equality', () {
     expect(Doller(5), equals(Doller(5)));
+    expect(Doller(5), isNot(equals(Doller(6))));
   });
 }
