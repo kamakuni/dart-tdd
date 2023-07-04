@@ -12,4 +12,9 @@ void main() {
     expect(Doller(5), equals(Doller(5)));
     expect(Doller(5), isNot(equals(Doller(6))));
   });
+  test('FrancMultiplication', () {
+    final five = Franc(5);
+    expect(five.times(2), equals(Franc(10)));
+    expect(five.times(3), equals(Franc(15)));
+  });
 }
