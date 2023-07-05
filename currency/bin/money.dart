@@ -1,33 +1,36 @@
-class Doller {
-  final int _amount;
-  Doller(this._amount);
+class Money {
+  final int amount;
+  Money(this.amount);
+}
+
+class Doller extends Money {
+  Doller(int amount) : super(amount);
   Doller times(int multiplier) {
-    return Doller(_amount * multiplier);
+    return Doller(amount * multiplier);
   }
 
   @override
   bool operator ==(Object other) =>
       other is Doller &&
       other.runtimeType == runtimeType &&
-      other._amount == _amount;
+      other.amount == amount;
 
   @override
-  int get hashCode => _amount.hashCode;
+  int get hashCode => amount.hashCode;
 }
 
-class Franc {
-  final int _amount;
-  Franc(this._amount);
+class Franc extends Money {
+  Franc(int amount) : super(amount);
   Franc times(int multiplier) {
-    return Franc(_amount * multiplier);
+    return Franc(amount * multiplier);
   }
 
   @override
   bool operator ==(Object other) =>
       other is Franc &&
       other.runtimeType == runtimeType &&
-      other._amount == _amount;
+      other.amount == amount;
 
   @override
-  int get hashCode => _amount.hashCode;
+  int get hashCode => amount.hashCode;
 }
