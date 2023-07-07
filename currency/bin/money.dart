@@ -2,6 +2,14 @@ class Money {
   final int amount;
   Money(this.amount);
 
+  static Doller doller(int amount) {
+    return Doller(amount);
+  }
+
+  static Franc franc(int amount) {
+    return Franc(amount);
+  }
+
   @override
   bool operator ==(Object other) =>
       other is Money &&
