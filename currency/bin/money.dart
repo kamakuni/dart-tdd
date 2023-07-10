@@ -1,5 +1,6 @@
 abstract class Money {
   final int amount;
+  late final String currency;
 
   Money(this.amount);
 
@@ -11,7 +12,6 @@ abstract class Money {
     return Franc(amount);
   }
 
-  String currency();
   Money times(int multiplier);
 
   @override
@@ -25,11 +25,9 @@ abstract class Money {
 }
 
 class Doller extends Money {
-  Doller(int amount) : super(amount);
-
-  @override
-  String currency() {
-    return "USD";
+  Doller(int amount) : super(amount) {
+    amount = amount;
+    currency = "USD";
   }
 
   @override
@@ -39,11 +37,9 @@ class Doller extends Money {
 }
 
 class Franc extends Money {
-  Franc(int amount) : super(amount);
-
-  @override
-  String currency() {
-    return "CHF";
+  Franc(int amount) : super(amount) {
+    amount = amount;
+    currency = "CHF";
   }
 
   @override

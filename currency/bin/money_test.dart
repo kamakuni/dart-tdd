@@ -21,7 +21,7 @@ void main() {
     expect(five.times(3), equals(Money.franc(15)));
   });
   test('Currency', () {
-    expect(Money.doller(1).currency(), equals("USD"));
-    expect(Money.franc(1).currency(), equals("CHF"));
+    expect(Money.doller(1).currency, equals("USD"));
+    expect(Money.franc(1).currency, equals("CHF"));
   });
 }
