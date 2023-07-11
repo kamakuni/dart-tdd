@@ -1,18 +1,16 @@
-abstract class Money {
+class Money {
   final int amount;
   late final String currency;
 
-  Money(this.amount);
+  Money(this.amount, this.currency);
 
   static Doller doller(int amount) {
-    return Doller(amount);
+    return Doller(amount, "USD");
   }
 
   static Franc franc(int amount) {
-    return Franc(amount);
+    return Franc(amount, "CHF");
   }
-
-  Money times(int multiplier);
 
   @override
   bool operator ==(Object other) =>
@@ -25,25 +23,15 @@ abstract class Money {
 }
 
 class Doller extends Money {
-  Doller(int amount) : super(amount) {
-    amount = amount;
-    currency = "USD";
-  }
-
-  @override
+  Doller(int amount, String currency) : super(amount, currency);
   Money times(int multiplier) {
-    return Doller(amount * multiplier);
+    return Money(amount * multiplier, "USD");
   }
 }
 
 class Franc extends Money {
-  Franc(int amount) : super(amount) {
-    amount = amount;
-    currency = "CHF";
-  }
-
-  @override
+  Franc(int amount, String currency) : super(amount, currency);
   Money times(int multiplier) {
-    return Franc(amount * multiplier);
+    return Money(amount * multiplier, "CHF");
   }
 }
