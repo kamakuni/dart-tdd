@@ -4,12 +4,16 @@ class Money {
 
   Money(this.amount, this.currency);
 
-  static Doller doller(int amount) {
+  static Money doller(int amount) {
     return Doller(amount, "USD");
   }
 
-  static Franc franc(int amount) {
+  static Money franc(int amount) {
     return Franc(amount, "CHF");
+  }
+
+  Money times(int multiplier) {
+    return Money(amount * multiplier, currency);
   }
 
   @override
@@ -25,13 +29,13 @@ class Money {
 class Doller extends Money {
   Doller(int amount, String currency) : super(amount, currency);
   Money times(int multiplier) {
-    return Money(amount * multiplier, "USD");
+    return Money(amount * multiplier, currency);
   }
 }
 
 class Franc extends Money {
   Franc(int amount, String currency) : super(amount, currency);
   Money times(int multiplier) {
-    return Money(amount * multiplier, "CHF");
+    return Money(amount * multiplier, currency);
   }
 }
