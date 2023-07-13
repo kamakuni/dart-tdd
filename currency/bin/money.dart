@@ -18,12 +18,13 @@ class Money {
 
   @override
   bool operator ==(Object other) =>
-      other is Money &&
-      other.runtimeType == runtimeType &&
-      other.amount == amount;
+      other is Money && other.amount == amount && other.currency == currency;
 
   @override
   int get hashCode => amount.hashCode;
+
+  @override
+  String toString() => amount.toString() + " " + currency;
 }
 
 class Doller extends Money {
