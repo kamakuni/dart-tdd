@@ -29,14 +29,8 @@ class Money {
 
 class Doller extends Money {
   Doller(int amount, String currency) : super(amount, currency);
-  Money times(int multiplier) {
-    return Money(amount * multiplier, currency);
-  }
 }
 
 class Franc extends Money {
   Franc(int amount, String currency) : super(amount, currency);
-  Money times(int multiplier) {
-    return Money(amount * multiplier, currency);
-  }
 }
