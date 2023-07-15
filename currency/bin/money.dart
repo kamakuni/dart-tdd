@@ -5,11 +5,11 @@ class Money {
   Money(this.amount, this.currency);
 
   static Money doller(int amount) {
-    return Doller(amount, "USD");
+    return Money(amount, "USD");
   }
 
   static Money franc(int amount) {
-    return Franc(amount, "CHF");
+    return Money(amount, "CHF");
   }
 
   Money times(int multiplier) {
@@ -25,12 +25,4 @@ class Money {
 
   @override
   String toString() => amount.toString() + " " + currency;
-}
-
-class Doller extends Money {
-  Doller(int amount, String currency) : super(amount, currency);
-}
-
-class Franc extends Money {
-  Franc(int amount, String currency) : super(amount, currency);
 }
