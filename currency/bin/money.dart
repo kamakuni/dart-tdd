@@ -16,6 +16,10 @@ class Money {
     return Money(amount * multiplier, currency);
   }
 
+  Money plus(Money addend) {
+    return Money(amount + addend.amount, currency);
+  }
+
   @override
   bool operator ==(Object other) =>
       other is Money && other.amount == amount && other.currency == currency;
