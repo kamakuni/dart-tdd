@@ -18,7 +18,8 @@ void main() {
     expect(Money.franc(1).currency, equals("CHF"));
   });
   test('Simple Addition', () {
-    final sum = Money.doller(5).plus(Money.doller(5));
-    expect(Money.doller(10), equals(sum));
+    var bank = Bank();
+    var reduced = bank.reduce(sum, "USD");
+    expect(Money.doller(10), equals(reduced));
   });
 }
