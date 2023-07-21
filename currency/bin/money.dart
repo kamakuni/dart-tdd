@@ -1,4 +1,6 @@
-class Money {
+import 'expression.dart';
+
+class Money implements Expression {
   final int amount;
   late final String currency;
 
@@ -29,4 +31,10 @@ class Money {
 
   @override
   String toString() => amount.toString() + " " + currency;
+}
+
+class Bank {
+  Money reduce(Expression source, String to) {
+    return Money.doller(10);
+  }
 }
