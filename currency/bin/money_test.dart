@@ -24,4 +24,11 @@ void main() {
     var reduced = bank.reduce(sum, "USD");
     expect(Money.doller(10), equals(reduced));
   });
+  test('Test plus returns sum', () {
+    var five = Money.doller(5);
+    var result = five.plus(five);
+    var sum = result;
+    expect(five, equals(sum.augend));
+    expect(five, equals(sum.addend));
+  });
 }
