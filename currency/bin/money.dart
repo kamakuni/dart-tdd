@@ -1,5 +1,7 @@
 import 'expression.dart';
 
+abstract class Expression {}
+
 class Money implements Expression {
   final int amount;
   late final String currency;
@@ -37,4 +39,10 @@ class Bank {
   Money reduce(Expression source, String to) {
     return Money.doller(10);
   }
+}
+
+class Sum implements Expression {
+  final Money augend;
+  final Money addend;
+  Sum(this.augend, this.addend);
 }
