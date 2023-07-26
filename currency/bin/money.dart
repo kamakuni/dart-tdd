@@ -1,5 +1,3 @@
-import 'expression.dart';
-
 abstract class Expression {}
 
 class Money implements Expression {
@@ -20,8 +18,8 @@ class Money implements Expression {
     return Money(amount * multiplier, currency);
   }
 
-  Money plus(Money addend) {
-    return Money(amount + addend.amount, currency);
+  Expression plus(Money addend) {
+    return Sum(this, addend);
   }
 
   @override

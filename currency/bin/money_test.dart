@@ -24,10 +24,10 @@ void main() {
     var reduced = bank.reduce(sum, "USD");
     expect(Money.doller(10), equals(reduced));
   });
-  test('Test plus returns sum', () {
+  test('Plus returns sum', () {
     var five = Money.doller(5);
     var result = five.plus(five);
-    var sum = result;
+    var sum = result as Sum;
     expect(five, equals(sum.augend));
     expect(five, equals(sum.addend));
   });
