@@ -31,4 +31,10 @@ void main() {
     expect(five, equals(sum.augend));
     expect(five, equals(sum.addend));
   });
+  test('Reduce Sum', () {
+    var sum = Sum(Money.doller(3), Money.doller(4));
+    var bank = Bank();
+    var result = bank.reduce(sum, "USD");
+    expect(Money.doller(7), equals(result));
+  });
 }
