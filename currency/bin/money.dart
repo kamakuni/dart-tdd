@@ -36,8 +36,7 @@ class Money implements Expression {
 class Bank {
   Money reduce(Expression source, String to) {
     var sum = source as Sum;
-    var amount = sum.addend.amount + sum.augend.amount;
-    return Money(amount, to);
+    return sum.reduce(to);
   }
 }
 
@@ -45,4 +44,9 @@ class Sum implements Expression {
   final Money augend;
   final Money addend;
   Sum(this.augend, this.addend);
+
+  Money reduce(String to) {
+    var amount = addend.amount + augend.amount;
+    return Money(amount, to);
+  }
 }
