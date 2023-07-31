@@ -35,6 +35,7 @@ class Money implements Expression {
 
 class Bank {
   Money reduce(Expression source, String to) {
+    if (source is Money) return source;
     var sum = source as Sum;
     return sum.reduce(to);
   }

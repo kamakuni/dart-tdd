@@ -37,5 +37,9 @@ void main() {
     var result = bank.reduce(sum, "USD");
     expect(Money.doller(7), equals(result));
   });
-  test('Reduce Money', () {});
+  test('Reduce Money', () {
+    var bank = Bank();
+    var result = bank.reduce(Money.doller(1), "USD");
+    expect(result, equals(Money.doller(1)));
+  });
 }
