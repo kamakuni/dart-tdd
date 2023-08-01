@@ -1,4 +1,6 @@
-abstract class Expression {}
+abstract class Expression {
+  Money reduce(String to);
+}
 
 class Money implements Expression {
   final int amount;
@@ -22,6 +24,7 @@ class Money implements Expression {
     return Sum(this, addend);
   }
 
+  @override
   Money reduce(String to) {
     return this;
   }
@@ -50,6 +53,7 @@ class Sum implements Expression {
   final Money addend;
   Sum(this.augend, this.addend);
 
+  @override
   Money reduce(String to) {
     var amount = addend.amount + augend.amount;
     return Money(amount, to);
