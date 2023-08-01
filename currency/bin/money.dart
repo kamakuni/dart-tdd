@@ -22,6 +22,10 @@ class Money implements Expression {
     return Sum(this, addend);
   }
 
+  Money reduce(String to) {
+    return this;
+  }
+
   @override
   bool operator ==(Object other) =>
       other is Money && other.amount == amount && other.currency == currency;
@@ -35,7 +39,7 @@ class Money implements Expression {
 
 class Bank {
   Money reduce(Expression source, String to) {
-    if (source is Money) return source;
+    if (source is Money) return source.reduce(to);
     var sum = source as Sum;
     return sum.reduce(to);
   }
