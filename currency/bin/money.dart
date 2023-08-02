@@ -42,9 +42,7 @@ class Money implements Expression {
 
 class Bank {
   Money reduce(Expression source, String to) {
-    if (source is Money) return source.reduce(to);
-    var sum = source as Sum;
-    return sum.reduce(to);
+    return source.reduce(to);
   }
 }
 
