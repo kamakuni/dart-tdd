@@ -42,4 +42,10 @@ void main() {
     var result = bank.reduce(Money.doller(1), "USD");
     expect(result, equals(Money.doller(1)));
   });
+  test('Reduce money different currency', () {
+    var bank = Bank();
+    bank.addRate("CHF", "USD", 2);
+    var result = bank.reduce(Money.franc(2), "USD");
+    expect(result, equals(Money.doller(1)));
+  });
 }
