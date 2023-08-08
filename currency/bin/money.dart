@@ -1,5 +1,5 @@
 abstract class Expression {
-  Money reduce(String to);
+  Money reduce(Bank bank, String to);
 }
 
 class Money implements Expression {
@@ -25,7 +25,7 @@ class Money implements Expression {
   }
 
   @override
-  Money reduce(String to) {
+  Money reduce(Bank bank, String to) {
     //return this;
     int rate = (currency == "CHF" && to == "USD") ? 2 : 1;
     return Money(amount ~/ rate, to);
@@ -44,7 +44,7 @@ class Money implements Expression {
 
 class Bank {
   Money reduce(Expression source, String to) {
-    return source.reduce(to);
+    return source.reduce(this, to);
   }
 
   void addRate(String from, String to, int rate) {}
@@ -56,7 +56,7 @@ class Sum implements Expression {
   Sum(this.augend, this.addend);
 
   @override
-  Money reduce(String to) {
+  Money reduce(Bank bank, String to) {
     var amount = addend.amount + augend.amount;
     return Money(amount, to);
   }
