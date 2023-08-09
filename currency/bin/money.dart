@@ -27,7 +27,7 @@ class Money implements Expression {
   @override
   Money reduce(Bank bank, String to) {
     //return this;
-    int rate = (currency == "CHF" && to == "USD") ? 2 : 1;
+    int rate = bank.rate(currency, to);
     return Money(amount ~/ rate, to);
   }
 
