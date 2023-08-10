@@ -64,3 +64,16 @@ class Sum implements Expression {
     return Money(amount, to);
   }
 }
+
+class Pair {
+  final String _from;
+  final String _to;
+  Pair(this._from, this._to);
+
+  @override
+  bool operator ==(Object other) =>
+      other is Pair && other._from == _from && other._to == _to;
+
+  @override
+  int get hashCode => 0;
+}
