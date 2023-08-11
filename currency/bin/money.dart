@@ -43,6 +43,7 @@ class Money implements Expression {
 }
 
 class Bank {
+  final Map<Pair, int> _rates = {};
   Money reduce(Expression source, String to) {
     return source.reduce(this, to);
   }
