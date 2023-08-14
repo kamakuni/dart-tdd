@@ -1,3 +1,5 @@
+import 'package:test/expect.dart';
+
 abstract class Expression {
   Money reduce(Bank bank, String to);
 }
@@ -50,6 +52,7 @@ class Bank {
 
   void addRate(String from, String to, int rate) {}
   int rate(String from, String to) {
+    if (!_rates.containsKey(Pair(from, to))) throw Exception();
     return _rates[Pair(from, to)]!;
   }
 }
