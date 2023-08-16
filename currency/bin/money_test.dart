@@ -48,4 +48,7 @@ void main() {
     var result = bank.reduce(Money.franc(2), "USD");
     expect(result, equals(Money.doller(1)));
   });
+  test("Identity rate", () {
+    expect(Bank().rate("USD", "USD"), equals(1));
+  });
 }
