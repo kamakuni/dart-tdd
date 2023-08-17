@@ -53,6 +53,7 @@ class Bank {
   void addRate(String from, String to, int rate) {}
   int rate(String from, String to) {
     if (!_rates.containsKey(Pair(from, to))) throw Exception();
+    if (from == to) return 1;
     return _rates[Pair(from, to)]!;
   }
 }
