@@ -50,10 +50,13 @@ class Bank {
     return source.reduce(this, to);
   }
 
-  void addRate(String from, String to, int rate) {}
+  void addRate(String from, String to, int rate) {
+    _rates[Pair(from, to)] = rate;
+  }
+
   int rate(String from, String to) {
-    if (!_rates.containsKey(Pair(from, to))) throw Exception();
     if (from == to) return 1;
+    if (!_rates.containsKey(Pair(from, to))) throw Exception();
     return _rates[Pair(from, to)]!;
   }
 }
