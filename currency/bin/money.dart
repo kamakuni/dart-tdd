@@ -1,5 +1,3 @@
-import 'package:test/expect.dart';
-
 abstract class Expression {
   Money reduce(Bank bank, String to);
 }
