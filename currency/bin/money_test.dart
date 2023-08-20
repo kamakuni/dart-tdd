@@ -17,7 +17,7 @@ void main() {
     expect(Money.doller(1).currency, equals("USD"));
     expect(Money.franc(1).currency, equals("CHF"));
   });
-  test('Simple Addition', () {
+  test('Simple addition', () {
     var five = Money.doller(5);
     var sum = five.plus(five);
     var bank = Bank();
@@ -31,13 +31,13 @@ void main() {
     expect(five, equals(sum.augend));
     expect(five, equals(sum.addend));
   });
-  test('Reduce Sum', () {
+  test('Reduce sum', () {
     var sum = Sum(Money.doller(3), Money.doller(4));
     var bank = Bank();
     var result = bank.reduce(sum, "USD");
     expect(Money.doller(7), equals(result));
   });
-  test('Reduce Money', () {
+  test('Reduce money', () {
     var bank = Bank();
     var result = bank.reduce(Money.doller(1), "USD");
     expect(result, equals(Money.doller(1)));
