@@ -52,11 +52,11 @@ void main() {
     expect(Bank().rate("USD", "USD"), equals(1));
   });
   test("Mixed addition", (){
-    var fiveBucks = Money.doller(5);
-    var tesFrancs = Money.franc(10);
+    Money fiveBucks = Money.doller(5);
+    Money tenFrancs = Money.franc(10);
     var bank = Bank();
     bank.addRate("CHF", "USD", 2);
-    var result = bank.reduce(fiveBucks.plus(tesFrancs), "USD");
+    var result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
     expect(Money.doller(10), result);
   });
 }

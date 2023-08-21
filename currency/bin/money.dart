@@ -66,7 +66,7 @@ class Sum implements Expression {
 
   @override
   Money reduce(Bank bank, String to) {
-    var amount = addend.amount + augend.amount;
+    var amount = addend.reduce(bank, to).amount + augend.reduce(bank, to).amount;
     return Money(amount, to);
   }
 }
