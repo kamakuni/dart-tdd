@@ -16,11 +16,11 @@ class Money implements Expression {
     return Money(amount, "CHF");
   }
 
-  Money times(int multiplier) {
+  Expression times(int multiplier) {
     return Money(amount * multiplier, currency);
   }
 
-  Expression plus(Money addend) {
+  Expression plus(Expression addend) {
     return Sum(this, addend);
   }
 
@@ -60,8 +60,8 @@ class Bank {
 }
 
 class Sum implements Expression {
-  final Money augend;
-  final Money addend;
+  final Expression augend;
+  final Expression addend;
   Sum(this.augend, this.addend);
 
   @override
