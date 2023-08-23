@@ -52,8 +52,8 @@ void main() {
     expect(Bank().rate("USD", "USD"), equals(1));
   });
   test("Mixed addition", (){
-    Money fiveBucks = Money.doller(5);
-    Money tenFrancs = Money.franc(10);
+    Expression fiveBucks = Money.doller(5);
+    Expression tenFrancs = Money.franc(10);
     var bank = Bank();
     bank.addRate("CHF", "USD", 2);
     var result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
