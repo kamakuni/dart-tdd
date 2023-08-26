@@ -21,6 +21,7 @@ class Money implements Expression {
     return Money(amount * multiplier, currency);
   }
 
+  @override
   Expression plus(Expression addend) {
     return Sum(this, addend);
   }
@@ -69,6 +70,11 @@ class Sum implements Expression {
   Money reduce(Bank bank, String to) {
     var amount = addend.reduce(bank, to).amount + augend.reduce(bank, to).amount;
     return Money(amount, to);
+  }
+
+  @override
+  Expression plus(Expression addend) {
+    return Money(0,"USD");
   }
 }
 
