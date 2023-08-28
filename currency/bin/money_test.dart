@@ -57,6 +57,15 @@ void main() {
     var bank = Bank();
     bank.addRate("CHF", "USD", 2);
     var result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
-    expect(Money.doller(10), result);
+    expect(result, equals(Money.doller(10)));
+  });
+  test("SumPlusMoney", (){
+    Expression fiveBucks = Money.doller(5);
+    Expression tenFrancs = Money.franc(10);
+    var bank = Bank();
+    bank.addRate("CHF", "USD", 2);
+    Expression sum = Sum(fiveBucks, tenFrancs).plus(fiveBucks);
+    var result = bank.reduce(sum, "USD");
+    expect(result, equals(Money.doller(15)));
   });
 }
