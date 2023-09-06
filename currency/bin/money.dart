@@ -77,8 +77,9 @@ class Sum implements Expression {
   Expression plus(Expression addend) {
     return Sum(this, addend);
   }
-  Exception times(int multiplier) {
-    return Sum(augend.times(multiplier), addend.times(multiplier))
+  @override
+  Expression times(int multiplier) {
+    return Sum(augend.times(multiplier), addend.times(multiplier));
   }
 }
 
