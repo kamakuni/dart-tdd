@@ -71,9 +71,9 @@ void main() {
   test("Sum Times", (){
     var fiveBucks = Money.doller(5);
     var tenFrancs = Money.franc(10);
-    var bank = new Bank();
+    var bank = Bank();
     bank.addRate("CHF", "USD", 2);
-    var sum = new Sum(fiveBucks, tenFrancs).times(2);
+    var sum = Sum(fiveBucks, tenFrancs).times(2);
     var result = bank.reduce(sum, "USD");
     expect(result, equals(Money.doller(20)));
   });
