@@ -79,5 +79,6 @@ void main() {
   });
   test("Plus Same Currency Returns Money", (){
     var sum = Money.doller(1).plus(Money.doller(1));
+    expect(sum is Money, equals(true));
   });
 }
