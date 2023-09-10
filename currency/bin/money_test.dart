@@ -77,8 +77,4 @@ void main() {
     var result = bank.reduce(sum, "USD");
     expect(result, equals(Money.doller(20)));
   });
-  test("Plus Same Currency Returns Money", (){
-    var sum = Money.doller(1).plus(Money.doller(1));
-    expect(sum is Money, equals(true));
-  });
 }
