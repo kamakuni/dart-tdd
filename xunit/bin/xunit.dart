@@ -1,5 +1,8 @@
-import 'package:xunit/xunit.dart' as xunit;
+import 'package:xunit/xunit.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${xunit.calculate()}!');
+  var test = WasRun("testMethod");
+  print(test.wasRun);
+  test.testMethod();
+  print(test.wasRun);
 }

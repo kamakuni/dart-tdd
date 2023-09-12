@@ -1,3 +1,4 @@
-int calculate() {
-  return 6 * 7;
+class WasRun {
+  final String name;
+  WasRun(this.name);
 }
