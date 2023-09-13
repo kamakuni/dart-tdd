@@ -1,4 +1,10 @@
+import 'dart:ffi';
+
 class WasRun {
-  final String name;
-  WasRun(this.name);
+  late String name;
+  late Bool? wasRun;
+  WasRun(String name){
+    name = name;
+    wasRun = null;
+  }
 }
