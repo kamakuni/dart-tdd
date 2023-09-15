@@ -5,4 +5,8 @@ class WasRun {
     name = name;
     wasRun = null;
   }
+
+  void testMethod() {
+    
+  }
 }
