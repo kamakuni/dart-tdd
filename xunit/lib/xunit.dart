@@ -1,17 +1,20 @@
 import 'dart:mirrors';
 
-class WasRun {
+class TestCase {
   final String name;
+  TestCase(this.name);
+  void run() {
+    final m = reflect(this);
+    m.invoke(Symbol(name), []);
+  }
+}
+
+class WasRun extends TestCase {
   int? wasRun;
-  WasRun(this.name);
+  WasRun(name): super(name);  
 
   void testMethod() {
     wasRun = 1;
   }
 
-  void run() {
-    var m = reflect(this);
-    print(name);
-    m.invoke(Symbol(name),[]);
-  }
 }
