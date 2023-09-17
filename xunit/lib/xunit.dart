@@ -1,16 +1,17 @@
+import 'dart:mirrors';
+
 class WasRun {
-  late String name;
-  late int? wasRun;
-  WasRun(String name){
-    name = name;
-    wasRun = null;
-  }
+  final String name;
+  int? wasRun;
+  WasRun(this.name);
 
   void testMethod() {
     wasRun = 1;
   }
 
   void run() {
-    testMethod();
+    var m = reflect(this);
+    print(name);
+    m.invoke(Symbol(name),[]);
   }
 }
