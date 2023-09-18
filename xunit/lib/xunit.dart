@@ -18,3 +18,10 @@ class WasRun extends TestCase {
   }
 
 }
+
+class TestCaseTest extends TestCase {
+  void testRunning() {
+    var test = WasRun("testMethod");
+    test.run();
+  }
+}
