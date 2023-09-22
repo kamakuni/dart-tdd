@@ -26,4 +26,9 @@ class TestCaseTest extends TestCase {
     var test = WasRun("testMethod");
     test.run();
   }
+
+  void testSetUp() {
+    var test = WasRun("testMethod");
+    test.run();
+  }
 }
