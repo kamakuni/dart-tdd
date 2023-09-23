@@ -24,11 +24,15 @@ class TestCaseTest extends TestCase {
 
   void testRunning() {
     var test = WasRun("testMethod");
+    assert(test.wasRun != 1);
     test.run();
+    assert(test.wasRun == 1);
   }
 
   void testSetUp() {
     var test = WasRun("testMethod");
+    assert(test.wasRun != 1);
     test.run();
+    assert(test.wasRun == 1);
   }
 }
