@@ -11,7 +11,12 @@ class TestCase {
 
 class WasRun extends TestCase {
   int? wasRun;
+  int? wasSetUp;
   WasRun(name): super(name);  
+
+  void setUp(){
+    wasSetUp = 1;
+  }
 
   void testMethod() {
     wasRun = 1;
