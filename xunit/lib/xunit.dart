@@ -15,6 +15,7 @@ class WasRun extends TestCase {
   WasRun(name): super(name);  
 
   void setUp(){
+    wasRun = null;
     wasSetUp = 1;
   }
 
