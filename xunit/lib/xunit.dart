@@ -37,14 +37,14 @@ class TestCaseTest extends TestCase {
   }
 
   void testRunning() {
-    var test = WasRun("testMethod");
+    _test = WasRun("testMethod");
     _test.run();
-    assert(test.wasRun == 1);
+    assert(_test.wasRun == 1);
   }
 
   void testSetUp() {
-    var test = WasRun("testMethod");
+    _test = WasRun("testMethod");
     _test.run();
-    assert(test.wasRun == 1);
+    assert(_test.wasRun == 1);
   }
 }
