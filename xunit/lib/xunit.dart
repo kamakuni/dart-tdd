@@ -3,7 +3,7 @@ import 'dart:mirrors';
 class TestCase {
   final String name;
   int? wasRun;
-  int? wasSetUp;
+  late String log;
   TestCase(this.name);
   void setUp() {}
   void run() {
@@ -20,7 +20,7 @@ class WasRun extends TestCase {
   @override
   void setUp(){
     wasRun = null;
-    wasSetUp = 1;
+    log = "setUp ";
   }
 
   void testMethod() {
@@ -45,6 +45,6 @@ class TestCaseTest extends TestCase {
 
   void testSetUp() {
     _test.run();
-    assert(_test.wasRun == 1);
+    assert(_test.log == "setUp ");
   }
 }
