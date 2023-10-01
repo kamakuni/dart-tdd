@@ -25,6 +25,7 @@ class WasRun extends TestCase {
 
   void testMethod() {
     wasRun = 1;
+    log = "${log}testMethod ";
   }
 
 }
@@ -38,13 +39,8 @@ class TestCaseTest extends TestCase {
     _test = WasRun("testMethod");
   }
 
-  void testRunning() {
-    _test.run();
-    assert(_test.wasRun == 1);
-  }
-
   void testSetUp() {
     _test.run();
-    assert(_test.log == "setUp ");
+    assert(_test.log == "setUp testMethod");
   }
 }
