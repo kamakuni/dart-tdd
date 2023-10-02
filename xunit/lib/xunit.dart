@@ -5,10 +5,12 @@ class TestCase {
   late String log;
   TestCase(this.name);
   void setUp() {}
+  void tearDown() {}
   void run() {
     setUp();
     final m = reflect(this);
     m.invoke(Symbol(name), []);
+    tearDown();
   }
 }
 
@@ -23,6 +25,11 @@ class WasRun extends TestCase {
 
   void testMethod() {
     log = "${log}testMethod ";
+  }
+
+  @override
+  void tearDown() {
+    log = "${log}testMethod tearDown";
   }
 
 }
