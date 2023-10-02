@@ -39,7 +39,7 @@ class TestCaseTest extends TestCase {
     _test = WasRun("testMethod");
   }
 
-  void testSetUp() {
+  void testTemplateMethod() {
     _test.run();
     assert(_test.log == "setUp testMethod");
   }
