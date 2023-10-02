@@ -31,12 +31,9 @@ class TestCaseTest extends TestCase {
   TestCaseTest(super.name);
 
   late TestCase _test;
-  @override
-  void setUp() {
-    _test = WasRun("testMethod");
-  }
 
   void testTemplateMethod() {
+    _test = WasRun("testMethod");
     _test.run();
     assert(_test.log == "setUp testMethod");
   }
