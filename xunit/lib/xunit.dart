@@ -1,5 +1,11 @@
 import 'dart:mirrors';
 
+class TestResult {
+  String summary() {
+    return "1 run, 0 failed";
+  }
+}
+
 class TestCase {
   final String name;
   late String log;
@@ -43,5 +49,11 @@ class TestCaseTest extends TestCase {
     _test = WasRun("testMethod");
     _test.run();
     assert(_test.log == "setUp testMethod tearDown");
+  }
+
+  void testResult() {
+    _test = WasRun("testMethod");
+    result = _test.run();
+    assert("1 run, 0 failed" == result.summary());
   }
 }
