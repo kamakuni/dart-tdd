@@ -12,11 +12,12 @@ class TestCase {
   TestCase(this.name);
   void setUp() {}
   void tearDown() {}
-  void run() {
+  TestResult run() {
     setUp();
     final m = reflect(this);
     m.invoke(Symbol(name), []);
     tearDown();
+    return TestResult();
   }
 }
 
@@ -53,7 +54,7 @@ class TestCaseTest extends TestCase {
 
   void testResult() {
     _test = WasRun("testMethod");
-    result = _test.run();
+    final result = _test.run();
     assert("1 run, 0 failed" == result.summary());
   }
 }
