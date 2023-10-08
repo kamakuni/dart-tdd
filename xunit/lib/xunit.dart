@@ -1,6 +1,10 @@
 import 'dart:mirrors';
 
 class TestResult {
+  late int runCount;
+  TestCase(){
+    runCount = 1;
+  }
   String summary() {
     return "1 run, 0 failed";
   }
