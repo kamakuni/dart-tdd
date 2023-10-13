@@ -2,8 +2,11 @@ import 'dart:mirrors';
 
 class TestResult {
   late int runCount;
-  TestCase(){
+  TestResult(){
     runCount = 1;
+  }
+  void testStarted(){
+    runCount = runCount +1;
   }
   String summary() {
     return "1 run, 0 failed";
@@ -17,11 +20,13 @@ class TestCase {
   void setUp() {}
   void tearDown() {}
   TestResult run() {
+    final result = TestResult();
+    result.testStarted();
     setUp();
     final m = reflect(this);
     m.invoke(Symbol(name), []);
     tearDown();
-    return TestResult();
+    return result;
   }
 }
 
