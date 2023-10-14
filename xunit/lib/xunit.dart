@@ -66,4 +66,10 @@ class TestCaseTest extends TestCase {
     final result = _test.run();
     assert("1 run, 0 failed" == result.summary());
   }
+
+  void testFailedResult() {
+    final test = WasRun("testBrokenMethod");
+    final result = test.run();
+    assert("1 run, 1 failed" == result.summary());
+  }
 }
