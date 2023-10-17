@@ -72,4 +72,11 @@ class TestCaseTest extends TestCase {
     final result = test.run();
     assert("1 run, 1 failed" == result.summary());
   }
+
+  void testFailedResultFormatting() {
+    final result = TestResult();
+    result.testStarted();
+    result.testFailed();
+    assert("1 run, 1 failed" == result.summary());
+  }
 }
