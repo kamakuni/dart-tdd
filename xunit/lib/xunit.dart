@@ -2,11 +2,15 @@ import 'dart:mirrors';
 
 class TestResult {
   late int runCount;
-  TestResult(){
+  late int errorCount;
+  TestResult() {
     runCount = 1;
   }
-  void testStarted(){
-    runCount = runCount +1;
+  void testStarted() {
+    runCount = runCount + 1;
+  }
+  void testFailed() {
+    errorCount = errorCount + 1;
   }
   String summary() {
     return "1 run, 0 failed";
