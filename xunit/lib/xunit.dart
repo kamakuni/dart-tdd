@@ -4,7 +4,8 @@ class TestResult {
   late int runCount;
   late int errorCount;
   TestResult() {
-    runCount = 1;
+    runCount = 0;
+    errorCount = 0;
   }
   void testStarted() {
     runCount = runCount + 1;
