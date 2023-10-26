@@ -14,7 +14,7 @@ class TestResult {
     errorCount = errorCount + 1;
   }
   String summary() {
-    return "1 run, 0 failed";
+    return "$runCount run, $errorCount failed";
   }
 }
 
