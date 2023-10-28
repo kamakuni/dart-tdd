@@ -1,8 +1,8 @@
 import 'package:xunit/xunit.dart';
 
 void main(List<String> arguments) {
-  TestCaseTest("testTemplateMethod").run();
-  TestCaseTest("testResult").run();
-  //TestCaseTest("testFailedResult").run();
-  TestCaseTest("testFailedResultFormatting").run();
+  TestCaseTest("testTemplateMethod").run().summary();
+  TestCaseTest("testResult").run().summary();
+  TestCaseTest("testFailedResult").run().summary();
+  TestCaseTest("testFailedResultFormatting").run().summary();
 }
