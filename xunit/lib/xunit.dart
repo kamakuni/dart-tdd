@@ -28,8 +28,12 @@ class TestCase {
     final result = TestResult();
     result.testStarted();
     setUp();
-    final m = reflect(this);
-    m.invoke(Symbol(name), []);
+    try {
+      final m = reflect(this);
+      m.invoke(Symbol(name), []);
+    }  catch (ex Exception){
+      result.testFailed();
+    }
     tearDown();
     return result;
   }
