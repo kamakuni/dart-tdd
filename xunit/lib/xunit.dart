@@ -31,7 +31,7 @@ class TestCase {
     try {
       final m = reflect(this);
       m.invoke(Symbol(name), []);
-    }  catch (ex Exception){
+    }  catch (e) {
       result.testFailed();
     }
     tearDown();
