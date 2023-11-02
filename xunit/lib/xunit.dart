@@ -92,4 +92,12 @@ class TestCaseTest extends TestCase {
     result.testFailed();
     assert("1 run, 1 failed" == result.summary());
   }
+
+  void testSuite() {
+    final suite = TestSuite();
+    suite.add(WasRun("testMethod"));
+    suite.add(WasRun("testBrokenMethod"));
+    final result = suite.run();
+    assert("2 run, 1 failed" == result.summary());
+  }
 }
