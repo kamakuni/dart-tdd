@@ -5,4 +5,5 @@ void main(List<String> arguments) {
   print(TestCaseTest("testResult").run().summary());
   print(TestCaseTest("testFailedResult").run().summary());
   print(TestCaseTest("testFailedResultFormatting").run().summary());
+  print(TestCaseTest("testSuite").run().summary());
 }
