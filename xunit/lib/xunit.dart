@@ -39,6 +39,16 @@ class TestCase {
   }
 }
 
+class TestSuite {
+  late List<TestCase> tests;
+  TestSuite() {
+    tests = [];
+  }
+  void add(TestCase test) {
+    tests.add(test);
+  }
+}
+
 class WasRun extends TestCase {
 
   WasRun(name): super(name);  
