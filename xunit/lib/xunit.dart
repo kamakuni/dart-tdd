@@ -47,6 +47,13 @@ class TestSuite {
   void add(TestCase test) {
     tests.add(test);
   }
+  void run() {
+    final result = TestResult();
+    tests.forEach((test) {
+      test.run(result);
+    });
+    return result;
+  }
 }
 
 class WasRun extends TestCase {
