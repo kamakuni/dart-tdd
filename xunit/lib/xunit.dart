@@ -114,7 +114,8 @@ class TestCaseTest extends TestCase {
     final suite = TestSuite();
     suite.add(WasRun("testMethod"));
     suite.add(WasRun("testBrokenMethod"));
-    final result = suite.run();
+    final result = TestResult();
+    suite.run(result);
     assert("2 run, 1 failed" == result.summary());
   }
 }
