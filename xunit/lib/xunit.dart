@@ -24,8 +24,7 @@ class TestCase {
   TestCase(this.name);
   void setUp() {}
   void tearDown() {}
-  TestResult run() {
-    final result = TestResult();
+  void run(TestResult result) {
     result.testStarted();
     setUp();
     try {
@@ -35,7 +34,6 @@ class TestCase {
       result.testFailed();
     }
     tearDown();
-    return result;
   }
 }
 
@@ -47,12 +45,10 @@ class TestSuite {
   void add(TestCase test) {
     tests.add(test);
   }
-  void run() {
-    final result = TestResult();
+  void run(TestResult result) {
     tests.forEach((test) {
       test.run(result);
     });
-    return result;
   }
 }
 
