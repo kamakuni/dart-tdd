@@ -83,19 +83,22 @@ class TestCaseTest extends TestCase {
 
   void testTemplateMethod() {
     _test = WasRun("testMethod");
-    _test.run();
+    final result = TestResult();
+    _test.run(result);
     assert(_test.log == "setUp testMethod tearDown");
   }
 
   void testResult() {
     _test = WasRun("testMethod");
-    final result = _test.run();
+    final result = TestResult();
+    _test.run(result);
     assert("1 run, 0 failed" == result.summary());
   }
 
   void testFailedResult() {
     final test = WasRun("testBrokenMethod");
-    final result = test.run();
+    final result = TestResult();
+    test.run(result);
     assert("1 run, 1 failed" == result.summary());
   }
 
