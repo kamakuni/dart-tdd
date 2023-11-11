@@ -80,30 +80,31 @@ class TestCaseTest extends TestCase {
   TestCaseTest(super.name);
 
   late TestCase _test;
+  late TestResult result;
+
+  void setUp() {
+    result = TestResult();
+  }
 
   void testTemplateMethod() {
     _test = WasRun("testMethod");
-    final result = TestResult();
     _test.run(result);
     assert(_test.log == "setUp testMethod tearDown");
   }
 
   void testResult() {
     _test = WasRun("testMethod");
-    final result = TestResult();
     _test.run(result);
     assert("1 run, 0 failed" == result.summary());
   }
 
   void testFailedResult() {
     final test = WasRun("testBrokenMethod");
-    final result = TestResult();
     test.run(result);
     assert("1 run, 1 failed" == result.summary());
   }
 
   void testFailedResultFormatting() {
-    final result = TestResult();
     result.testStarted();
     result.testFailed();
     assert("1 run, 1 failed" == result.summary());
@@ -113,7 +114,6 @@ class TestCaseTest extends TestCase {
     final suite = TestSuite();
     suite.add(WasRun("testMethod"));
     suite.add(WasRun("testBrokenMethod"));
-    final result = TestResult();
     suite.run(result);
     assert("2 run, 1 failed" == result.summary());
   }
